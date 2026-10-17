@@ -1,0 +1,21 @@
+-- Q1 overall funnel --
+[(8000, 842, 10.525)]
+-- Q2 conversion by origin (top 5) --
+('organic_search', 2296, 271, 11.8, 32.2, 1)
+('paid_search', 1586, 195, 12.3, 23.2, 2)
+('unknown', 1099, 179, 16.29, 21.3, 3)
+('social', 1350, 75, 5.56, 8.9, 4)
+('direct_traffic', 499, 56, 11.22, 6.7, 5)
+-- Q4 sales cycle (min, avg, max days) --
+[(-1, 48.4, 427)]
+-- Q7 sales rep productivity (top 3) --
+('4ef15afb4b2723d8f3d81e51ec7afefe', 133, 1)
+('d3d1e91a157ea7f90548eef82f1955e3', 82, 2)
+('6565aa9ce3178a5caf6171827af3a9ba', 74, 3)
+-- data-quality checks (added after external audit) --
+missing mql_id in mql: 0
+missing mql_id in deals: 0
+duplicate deal mql_ids: 0
+empty origin in mql: 60
+left-join cardinality (expect 8000): 8000
+negative close times (documented quirk, expect 1): 1

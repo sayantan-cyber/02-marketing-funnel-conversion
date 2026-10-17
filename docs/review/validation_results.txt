@@ -1,0 +1,66 @@
+[PASS] MQL rows == 8,000
+[PASS] closed-deal rows == 842
+[PASS] mql_id unique in MQLs
+[PASS] deal mql_id unique (1:1 join)
+[PASS] no missing mql_id in MQLs
+[PASS] no missing mql_id in deals
+[PASS] every deal maps to an MQL
+[PASS] join keeps all 8,000 MQLs (cardinality 1:1)
+[PASS] first_contact_date present
+[PASS] seller_id present on every won deal
+[PASS] exactly 60 leads with empty origin (documented)
+[PASS] exactly 1 negative close time (documented quirk)
+
+-- Funnel --
+MQLs: 8000 | closed deals: 842 | conversion % (exact): 10.525
+MQL window: 2017-06-14 to 2018-05-31
+Median days to close: 14.0 | mean: 48.4 | p90: 162
+
+Conversion by origin:
+                   mqls  won  conv_pct
+origin                                
+organic_search     2296  271     11.80
+paid_search        1586  195     12.30
+unknown            1099  179     16.29
+social             1350   75      5.56
+direct_traffic      499   56     11.22
+referral            284   24      8.45
+email               493   15      3.04
+display             118    6      5.08
+other               150    4      2.67
+other_publicities    65    3      4.62
+
+Landing pages tracked: 495
+
+Top segments by closed deals:
+                                 deals
+business_segment                      
+home_decor                         105
+health_beauty                       93
+car_accessories                     77
+household_utilities                 71
+construction_tools_house_garden     69
+
+Lead type mix of won deals:
+lead_type
+online_medium      332
+online_big         126
+industry           123
+offline            104
+online_small        77
+online_beginner     57
+online_top          14
+other                3
+Name: count, dtype: int64
+
+Declared monthly revenue: zero/blank in 94.7 % of won deals; top 10 deals hold 97.4 % of the total
+
+-- Expected-output checks --
+[PASS] conversion_by_origin: 10 channels, won sums to 828 (14 deals have empty origin)
+[PASS] monthly_funnel: totals reconcile to 8,000 MQLs / 842 deals
+[PASS] top_landing_pages: 10 rows
+[PASS] won_by_segment: deals sum to 841 (1 won deal has empty segment, documented)
+
+Won leads whose seller_id appears in the Project 1 e-commerce sellers table: 380 of 842 (45.1%)
+
+Pipeline complete. Charts in visuals/, exports in data-exports/.
