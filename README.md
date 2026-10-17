@@ -27,6 +27,8 @@ real go?
   available Olist e-commerce sellers dataset from Project 1 - the two
   datasets link on seller_id. Absence does not prove a seller never sold.
 
+- **Declared revenue is unusable as a signal:** 94.7% of won deals report R$0 monthly revenue and 97.4% of the declared total sits in just 10 deals — treated as missing data, not insight.
+
 Full write-up with recommendations and limitations: [docs/findings_and_recommendations.md](docs/findings_and_recommendations.md)
 
 ## Repository layout
